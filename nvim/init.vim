@@ -12,17 +12,7 @@ Plug 'aymericbeaumet/vim-symlink'
 Plug 'tiagovla/tokyodark.nvim'
 call plug#end()
 
-let g:tokyodark_transparent_background = 0
-let g:tokyodark_enable_italic_comment = 1
-let g:tokyodark_enable_italic = 1
-let g:tokyodark_color_gamma = "1.0"
-colorscheme tokyodark
-highlight Normal guibg=none
-
-let mapleader = " "
-nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
-
 augroup MINE
     autocmd!
-    autocmd BufWritePre * %s/\s\+$//
+    autocmd BufWritePre * %s/\s\+$//e
 augroup END
